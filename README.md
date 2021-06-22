@@ -32,5 +32,7 @@ Here we provide the results from both the color space training (rgb and lab). Th
 
 
 This is a collaborative effort of:
-- [Aritra Roy Gosthipaty](https://twitter.com/ariG23498) (PyImageSearch)
-- [Ayush Thakur](https://twitter.com/ayushthakur0) (Weights and Biases)
+- [Aritra Roy Gosthipaty](https://twitter.com/ariG23498)\* (PyImageSearch)
+- [Ayush Thakur](https://twitter.com/ayushthakur0)\* (Weights and Biases)
+
+\* Equal Contribution
