@@ -1,12 +1,14 @@
 # Instance-aware Colorization in TensorFlow
 
-A minimal reproduction of [Instance-aware Image Colorization](https://arxiv.org/abs/2005.10825) in TensorFlow. In this repository we have tried encapsulating all the main featurs of the training process as suggested in the paper. The repository consists of jupyter notebook only, this was done to help readers with reading the code better and also execute and experiment on it.
+A minimal reproduction of [Instance-aware Image Colorization](https://arxiv.org/abs/2005.10825) in TensorFlow. In this repository we have tried encapsulating all the main featurs of the training process as suggested in the paper. The repository consists of jupyter notebook only, this was done to help readers with reading the code better and also execute and experiment on it. 
+
+You can also check this Weights and Biases report for [quick paper summary](http://wandb.me/instcolorization-report). For inference using official model weights try out this [colab notebook](http://wandb.me/instcolorization-colab). 
 
 What we have covered:
-- The segmented training process
-  - Total colorization
-  - Instance colorization
-  - Fusion model which fuses the total and instance colorization models
+- The three stage training process
+  - Stage 1: Learn to colorize full (total) image using UNet-like architecture.
+  - Stage 2: Learn to colorize Instance (where an object of interest is available) using same UNet-like architecture (different weights).
+  - Stage 3: Fusion model which fuses the total and instance colorization models
 - Ablating on the following color spaces
   - RGB
   - L\*a\*b\*
@@ -23,9 +25,12 @@ We have use the [PASCAL VOC](https://paperswithcode.com/dataset/pascal-voc) data
 ## Results
 Here we provide the results from both the color space training (rgb and lab). The reader needs to keep this in mind that it is a minimal implementation where we have trained the entire model from scratch with a small dataset. The images have the structural integrity but lag good colors. We see here that the lab space results are better than the rgb results.
 
-![image](https://user-images.githubusercontent.com/36856589/122922365-2a5e5800-d381-11eb-992c-3a5e39acb194.png)
-![image](https://user-images.githubusercontent.com/36856589/122922401-334f2980-d381-11eb-9aaf-a72b7519aec6.png)
+| RGB Color Space | LAB Color Space |
+| :---: | :---: |
+| ![image](https://user-images.githubusercontent.com/36856589/122922365-2a5e5800-d381-11eb-992c-3a5e39acb194.png) | ![image](https://user-images.githubusercontent.com/36856589/122922401-334f2980-d381-11eb-9aaf-a72b7519aec6.png) |
+
+
 
 This is a collaborative effort of:
-- [Ayush Thakur](https://twitter.com/ayushthakur0) (Weights and Biases)
 - [Aritra Roy Gosthipaty](https://twitter.com/ariG23498) (PyImageSearch)
+- [Ayush Thakur](https://twitter.com/ayushthakur0) (Weights and Biases)
